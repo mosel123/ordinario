@@ -43,6 +43,10 @@ char buffOp2[3]={};
 char buffOp3[3]={};
 
 int indexBff=0;
+int indexOp1=0;
+int indexOp2=0;
+int indexOp3=0;
+
 int sumaDatos=0;
 
 int1 banderaOp1=0;

@@ -17,17 +17,7 @@
    #define TX_232        PIN_C6
    #define RX_232        PIN_C7
    #use RS232(BAUD=9600, XMIT=TX_232, BITS=8,PARITY=N, STOP=1,UART1,RCV=RX_232)
-#endif
-
-#define posInicialOp1 2
-#define posInicialOp2 6
-#define posinicialOp3 10
-
-#define posFinalOp1 4
-#define posFinalOp2 8
-#define posFinalOp3 12
-
-#define posCaracter 14 
+#endif 
 
 char caracter;
 char bandera;
@@ -35,30 +25,27 @@ char echo;
 char enter;
 char cadena;
 char puntoComa;
-char convierte;
 
 char buffRx[15]={};
 char buffOp1[3]={};
 char buffOp2[3]={};
 char buffOp3[3]={};
 
-int indexBff=0;
-int sumaDatos=0;
-
-int1 banderaOp1=0;
-int1 banderaOp2=0;
-int1 banderaOp3=0;
-
 int contador=0;
-int contadorPuntoComa=0;
+int indexBff=0;
+int indexOp1=0;
+int indexOp2=0;
+int indexOp3=0;
 int contadorLsb = 0;
+
+int1 banderaI = 0;
+int1 banderaD = 0;
 
 #bit banderaSerial = bandera.0
 #bit banderaEcho = echo.0
 #bit banderaEnter = enter.0
 #bit banderaCadena = cadena.0 
 #bit banderaPuntoComa = puntoComa.0
-#bit banderaConvierte = convierte.0
 
 #INT_RDA
 void itrRDA(void)
@@ -84,7 +71,6 @@ void itrRDA(void)
    if(buffRx[indexBff] == 0x3B)
    {
       banderaPuntoComa = 1;
-      contadorPuntoComa++;
    }
 }
 
@@ -118,61 +104,6 @@ void main(void)
       {
          putc(caracter);
          banderaEcho = 0;
-      }
-      
-      if(banderaPuntoComa)
-      {
-         banderaPuntoComa=0;
-         if(contadorPuntoComa==1)
-         {
-            banderaOp1=1;
-            for(int index = posInicialOp1; index <= posFinalOp1; index++)
-            {
-               buffOp1[index] = buffRx[index];
-               banderaConvierte=1;
-            }
-         }
-         else if(contadorPuntoComa==2)
-         {
-            banderaOp2=1;
-            for(int index = posInicialOp2; index <= posFinalOp2; index++)
-            {
-               buffOp2[index] = buffRx[index];
-               banderaConvierte=1;
-            }
-         }         
-         else if(contadorPuntoComa==3)
-         {
-            contadorPuntoComa=0;
-            banderaOp3=1;
-            for(int index = posInicialOp3; index <= posFinalOp3; index++)
-            {
-               buffOp3[index] = buffRx[index];
-               banderaConvierte=1;
-            }
-         }
-      }
-      
-      if(banderaConvierte)
-      {
-         if(banderaOp1)
-         {
-            banderaOp1=0;
-            sumaDatos=0;
-            sumaDatos=atof(buffOp1);
-         }
-         else if(banderaOp2)
-         {
-            banderaOp2=0;
-            sumaDatos=0;
-            sumaDatos=atof(buffOp2);
-         }
-         else if(banderaOp3)
-         {
-            banderaOp3=0;
-            sumaDatos=0;
-            sumaDatos=atof(buffOp3);
-         }
       }
    }
 }

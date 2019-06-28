@@ -1,8 +1,24 @@
 ÀÄmain
-   ÃÄMAIN  0/194  Ram=0
+   ÃÄMAIN  0/554  Ram=3
    ³  ÃÄ@cinit1  (Inline)  Ram=0
    ³  ÃÄ@PSTRINGC_9600_31766_31767  0/34  Ram=2
    ³  ÃÄ@PSTRINGC_9600_31766_31767  0/34  Ram=2
-   ³  ÀÄ@PUTCHARI_BIU_1  0/10  Ram=0
-   ÃÄitrRDA  0/106  Ram=2
+   ³  ÃÄ@PUTCHARI_BIU_1  0/10  Ram=0
+   ³  ÃÄstrtof  0/562  Ram=19
+   ³  ³  ÃÄ@MULFF  0/242  Ram=11
+   ³  ³  ÃÄ@ITOF  0/54  Ram=2
+   ³  ³  ÃÄ@DIVFF  0/348  Ram=14
+   ³  ³  ÃÄ@ADDFF  0/618  Ram=16
+   ³  ³  ÃÄ@MULFF  0/242  Ram=11
+   ³  ³  ÃÄ@ITOF  0/54  Ram=2
+   ³  ³  ÃÄ@ADDFF  0/618  Ram=16
+   ³  ³  ÀÄ@MULFF  0/242  Ram=11
+   ³  ÃÄ@SFTOI  0/56  Ram=4
+   ³  ÃÄstrtof  0/562  Ram=19
+   ³  ³  ÀÄ*
+   ³  ÃÄ@SFTOI  0/56  Ram=4
+   ³  ÃÄstrtof  0/562  Ram=19
+   ³  ³  ÀÄ*
+   ³  ÀÄ@SFTOI  0/56  Ram=4
+   ÃÄitrRDA  0/108  Ram=2
    ÀÄtimer_0  0/16  Ram=0

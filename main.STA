@@ -1,57 +1,63 @@
 
-ROM used:   578/65536 (1%)
-            578/65536 (1%) including unused fragments
+ROM used:   2820/65536 (4%)
+            2820/65536 (4%) including unused fragments
 
-            0.2 Average locations per line
-            1.5 Average locations per statement
+            1.0 Average locations per line
+            6.4 Average locations per statement
 
-RAM used:   65/3968 (2%) at main() level
-            69/3968 (2%) worst case
+RAM used:   68/3968 (2%) at main() level
+            105/3968 (3%) worst case
 
-Stack used: 2 worst case (1 in main + 1 for interrupts)
+Stack used: 3 worst case (2 in main + 1 for interrupts)
 Stack size: 31
 
 Lines Stmts  %   Files
 ----- ----- ---  -----
-  110    36   9  main.c
+  179    79  18  main.c
   834     0   0  ..\..\..\..\..\Program Files (x86)\PICC\Devices\18f4620.h
    37     0   0  ..\..\..\..\..\Program Files (x86)\PICC\Drivers\stdio.h
   423     0   0  ..\..\..\..\..\Program Files (x86)\PICC\Drivers\string.h
    32     0   0  ..\..\..\..\..\Program Files (x86)\PICC\Drivers\stddef.h
    28     0   0  ..\..\..\..\..\Program Files (x86)\PICC\Drivers\ctype.h
- 1351   359  91  ..\..\..\..\..\Program Files (x86)\PICC\Drivers\stdlib.h
+ 1351   359  82  ..\..\..\..\..\Program Files (x86)\PICC\Drivers\stdlib.h
 ----- -----
- 2815   395 Total
+ 2884   438 Total
 
 Page ROM  %  RAM   Vol Diff  Functions:
 ---- --- --- ---   --- ----  ----------
-0     10   1    0             @PUTCHARI_BIU_1
-0    106   9    2   423  4.7  itrRDA
-0     16   1    0    29  1.2  timer_0
-0    194  17    0   346  3.2  MAIN
-0     56   5    0             @const943
-0     34   3    2             @PSTRINGC_9600_31766_31767
-0      4   0    0             @const945
+0    242   4   11             @MULFF
+0     54   1    2             @ITOF
+0    618  11   16             @ADDFF
+0    348   6   14             @DIVFF
+0    562  10   19  1542 12.4  strtof
+0     10   0    0             @PUTCHARI_BIU_1
+0    108   2    2   442  4.7  itrRDA
+0     16   0    0    29  1.2  timer_0
+0    554  10    3  1765  6.9  MAIN
+0     56   1    0             @const945
+0     34   1    2             @PSTRINGC_9600_31766_31767
+0      4   0    0             @const947
+0     56   1    4             @SFTOI
  Inline         0             @cinit1
 
 Program metrics:
-    Functions               3
-    Statements              395
+    Functions               4
+    Statements              438
     Comments                693
-    Volume (V)              1001
-    Difficulty (D)          8.9
-    Effort to implement (E) 8894
-    Time to implement (T)   8 minutes
-    Est Delivered Bugs (B)  0
-    Cyclomatic Complexity   5
-    Maintainability (MI)    11
+    Volume (V)              4688
+    Difficulty (D)          24.8
+    Effort to implement (E) 116029
+    Time to implement (T)   1 hours, 47 minutes
+    Est Delivered Bugs (B)  1
+    Cyclomatic Complexity   28
+    Maintainability (MI)    107
 
  Segment     Used  Free
 -----------  ----  ----
 00000-00002     4  0  
 00004-00006     0  4  
 00008-000A0   154  0  
-000A2-0FFFE   420  64954  
+000A2-0FFFE  2662  62712  
 
 
 
