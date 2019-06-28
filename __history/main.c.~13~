@@ -1,4 +1,3 @@
-//Ordinario 4G//
 #include <18f4620.h>
 #include <stdio.h>
 #include <stdlib.h>

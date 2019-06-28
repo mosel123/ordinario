@@ -1,4 +1,4 @@
-CCS PCH C Compiler, Version 5.012, 41559               28-jun.-19 14:55
+CCS PCH C Compiler, Version 5.012, 41559               28-jun.-19 14:57
 
                Filename:   C:\Users\Usuario\Desktop\ordi\nombre\main.lst
 
@@ -55,6 +55,7 @@ CCS PCH C Compiler, Version 5.012, 41559               28-jun.-19 14:55
 00098:  MOVFF  06,FE0
 0009C:  MOVFF  05,FD8
 000A0:  RETFIE 0
+.................... //Ordinario 4G// 
 .................... #include <18f4620.h> 
 .................... ///////////// Standard Header file for the PIC18F4620 device //////////////// 
 .................... /////////////////////////////////////////////////////////////////////////// 
