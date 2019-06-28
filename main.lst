@@ -1,9 +1,9 @@
-CCS PCH C Compiler, Version 5.012, 41559               28-jun.-19 14:42
+CCS PCH C Compiler, Version 5.012, 41559               28-jun.-19 14:48
 
                Filename:   C:\Users\Usuario\Desktop\ordi\nombre\main.lst
 
-               ROM used:   3086 bytes (5%)
-                           Largest free fragment is 62446
+               ROM used:   3102 bytes (5%)
+                           Largest free fragment is 62430
                RAM used:   72 (2%) at main() level
                            109 (3%) worst case
                Stack used: 3 locations (2 in main + 1 for interrupts)
@@ -3889,7 +3889,6 @@ CCS PCH C Compiler, Version 5.012, 41559               28-jun.-19 14:42
 ....................                } 
 ....................                /////////////////////////////// 
 ....................  
-....................                /////////////////////////////// 
 ....................                if((sumaOp1&0x80) > 0x00 && (sumaOp2&0x80) > 0x00 && (sumaOp3&0x80) > 0x00) 
 00B7E:  MOVF   3C,W
 00B80:  ANDLW  80
@@ -3928,87 +3927,104 @@ CCS PCH C Compiler, Version 5.012, 41559               28-jun.-19 14:42
 ....................        
 ....................       if(banderaPuertoA) 
 00BAE:  BTFSS  3F.3
-00BB0:  BRA    0BC6
+00BB0:  BRA    0BCA
 ....................       { 
 ....................          banderaPuertoA=0; 
 00BB2:  BCF    3F.3
-....................          contadorA = contadorA << 1; 
-00BB4:  BCF    FD8.0
-00BB6:  RLCF   42,F
-....................          if(contadorA == 128) 
-00BB8:  MOVF   42,W
-00BBA:  SUBLW  80
-00BBC:  BNZ   0BC2
+....................          if(contador == 1) 
+00BB4:  DECFSZ 40,W
+00BB6:  BRA    0BC6
 ....................          { 
-....................             contadorA = 1; 
-00BBE:  MOVLW  01
-00BC0:  MOVWF  42
+....................             contadorA = contadorA << 1; 
+00BB8:  BCF    FD8.0
+00BBA:  RLCF   42,F
+....................             if(contadorA == 128) 
+00BBC:  MOVF   42,W
+00BBE:  SUBLW  80
+00BC0:  BNZ   0BC6
+....................             { 
+....................                contadorA = 1; 
+00BC2:  MOVLW  01
+00BC4:  MOVWF  42
+....................             } 
 ....................          } 
 ....................          output_A(contadorA); 
-00BC2:  MOVFF  42,F89
+00BC6:  MOVFF  42,F89
 ....................       } 
 ....................       if(banderaPuertoB) 
-00BC6:  BTFSS  3F.4
-00BC8:  BRA    0BDE
+00BCA:  BTFSS  3F.4
+00BCC:  BRA    0BE8
 ....................       { 
-....................          banderaPuertoB=0; 
-00BCA:  BCF    3F.4
-....................          contadorB = contadorB << 1; 
-00BCC:  BCF    FD8.0
-00BCE:  RLCF   43,F
-....................          if(contadorB == 128) 
-00BD0:  MOVF   43,W
-00BD2:  SUBLW  80
-00BD4:  BNZ   0BDA
+....................          if(contador == 3) 
+00BCE:  MOVF   40,W
+00BD0:  SUBLW  03
+00BD2:  BNZ   0BE4
 ....................          { 
-....................             contadorB = 1; 
-00BD6:  MOVLW  01
-00BD8:  MOVWF  43
+....................             banderaPuertoB=0; 
+00BD4:  BCF    3F.4
+....................             contadorB = contadorB << 1; 
+00BD6:  BCF    FD8.0
+00BD8:  RLCF   43,F
+....................             if(contadorB == 128) 
+00BDA:  MOVF   43,W
+00BDC:  SUBLW  80
+00BDE:  BNZ   0BE4
+....................             { 
+....................                contadorB = 1; 
+00BE0:  MOVLW  01
+00BE2:  MOVWF  43
+....................             } 
 ....................          } 
 ....................          output_B(contadorB); 
-00BDA:  MOVFF  43,F8A
+00BE4:  MOVFF  43,F8A
 ....................       } 
 ....................       if(banderaPuertoD) 
-00BDE:  BTFSS  3F.5
-00BE0:  BRA    0BF6
+00BE8:  BTFSS  3F.5
+00BEA:  BRA    0C06
 ....................       { 
-....................          banderaPuertoD=0; 
-00BE2:  BCF    3F.5
-....................          contadorD = contadorD << 1; 
-00BE4:  BCF    FD8.0
-00BE6:  RLCF   44,F
-....................          if(contadorD == 128) 
-00BE8:  MOVF   44,W
-00BEA:  SUBLW  80
-00BEC:  BNZ   0BF2
+....................          if(contador == 5) 
+00BEC:  MOVF   40,W
+00BEE:  SUBLW  05
+00BF0:  BNZ   0C02
 ....................          { 
-....................             contadorD = 1; 
-00BEE:  MOVLW  01
-00BF0:  MOVWF  44
+....................             banderaPuertoD=0; 
+00BF2:  BCF    3F.5
+....................             contadorD = contadorD << 1; 
+00BF4:  BCF    FD8.0
+00BF6:  RLCF   44,F
+....................             if(contadorD == 128) 
+00BF8:  MOVF   44,W
+00BFA:  SUBLW  80
+00BFC:  BNZ   0C02
+....................             { 
+....................                contadorD = 1; 
+00BFE:  MOVLW  01
+00C00:  MOVWF  44
+....................             } 
 ....................          } 
 ....................          output_D(contadorD); 
-00BF2:  MOVFF  44,F8C
+00C02:  MOVFF  44,F8C
 ....................       } 
 ....................       if(banderaImprime) 
-00BF6:  BTFSS  3F.6
-00BF8:  BRA    0C0E
+00C06:  BTFSS  3F.6
+00C08:  BRA    0C1E
 ....................       { 
 ....................          banderaImprime=0; 
-00BFA:  BCF    3F.6
+00C0A:  BCF    3F.6
 ....................          printf("El caracter ingresado es: "); 
-00BFC:  MOVLW  5A
-00BFE:  MOVWF  FF6
-00C00:  MOVLW  01
-00C02:  MOVWF  FF7
-00C04:  CALL   0176
+00C0C:  MOVLW  5A
+00C0E:  MOVWF  FF6
+00C10:  MOVLW  01
+00C12:  MOVWF  FF7
+00C14:  CALL   0176
 ....................          putc(buffRx[15-2]); 
-00C08:  MOVF   30,W
-00C0A:  CALL   0198
+00C18:  MOVF   30,W
+00C1A:  CALL   0198
 ....................       } 
-00C0E:  BRA    09C2
+00C1E:  BRA    09C2
 ....................    } 
 .................... } 
-00C10:  SLEEP 
+00C20:  SLEEP 
 
 Configuration Fuses:
    Word  1: 0100   XT NOFCMEN NOIESO

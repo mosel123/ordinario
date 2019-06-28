@@ -223,6 +223,7 @@ void main(void)
                }
                ///////////////////////////////
 
+               ///////////////////////////////
                if((sumaOp1&0x80) > 0x00 && (sumaOp2&0x80) > 0x00 && (sumaOp3&0x80) > 0x00)
                {
                   banderaImprime=1;
@@ -238,39 +239,30 @@ void main(void)
       if(banderaPuertoA)
       {
          banderaPuertoA=0;
-         if(contador == 1)
+         contadorA = contadorA << 1;
+         if(contadorA == 128)
          {
-            contadorA = contadorA << 1;
-            if(contadorA == 128)
-            {
-               contadorA = 1;
-            }
+            contadorA = 1;
          }
          output_A(contadorA);
       }
       if(banderaPuertoB)
       {
-         if(contador == 3)
+         banderaPuertoB=0;
+         contadorB = contadorB << 1;
+         if(contadorB == 128)
          {
-            banderaPuertoB=0;
-            contadorB = contadorB << 1;
-            if(contadorB == 128)
-            {
-               contadorB = 1;
-            }
+            contadorB = 1;
          }
          output_B(contadorB);
       }
       if(banderaPuertoD)
       {
-         if(contador == 5)
+         banderaPuertoD=0;
+         contadorD = contadorD << 1;
+         if(contadorD == 128)
          {
-            banderaPuertoD=0;
-            contadorD = contadorD << 1;
-            if(contadorD == 128)
-            {
-               contadorD = 1;
-            }
+            contadorD = 1;
          }
          output_D(contadorD);
       }
