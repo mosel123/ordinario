@@ -23,20 +23,10 @@ char caracter;
 char bandera;
 char echo;
 char enter;
-char cadena;
-char puntoComa;
-
-char buffRx[15]={};
-char buffOp1[3]={};
-char buffOp2[3]={};
-char buffOp3[3]={};
 
 int contador=0;
-int indexBff=0;
-int indexOp1=0;
-int indexOp2=0;
-int indexOp3=0;
-int contadorLsb = 0;
+long contadorLsb = 0;
+long contadorMsb = 128;
 
 int1 banderaI = 0;
 int1 banderaD = 0;
@@ -44,33 +34,16 @@ int1 banderaD = 0;
 #bit banderaSerial = bandera.0
 #bit banderaEcho = echo.0
 #bit banderaEnter = enter.0
-#bit banderaCadena = cadena.0 
-#bit banderaPuntoComa = puntoComa.0
 
 #INT_RDA
 void itrRDA(void)
 {
    caracter = getc();
-   BuffRx[indexBff]=caracter;
-   indexBff++;
    banderaEcho = 1;
    banderaSerial = 1;
-   
    if(caracter==0x0D)
    {
       banderaEnter=1;
-   }
-   if (indexBff == 15)
-   {
-      indexBff = 0;
-   }
-   if(buffRx[0] == 0x3E && buffRx[indexBff-2] == 0x3C)
-   {
-      banderaCadena = 1;
-   }
-   if(buffRx[indexBff] == 0x3B)
-   {
-      banderaPuntoComa = 1;
    }
 }
 
@@ -95,15 +68,8 @@ void main(void)
    enable_interrupts(global);   
    enable_interrupts(INT_RDA);
    
-   printf("Ingresa los datos de la manera: >op1;op2;op3;caracter<");
-   printf("\n \r");
-   
    while(TRUE)
    {
-      if(banderaEcho)
-      {
-         putc(caracter);
-         banderaEcho = 0;
-      }
+      
    }
 }

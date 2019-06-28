@@ -1,5 +1,8 @@
 ÀÄmain
-   ÃÄMAIN  0/94  Ram=0
-   ³  ÀÄ@cinit1  (Inline)  Ram=0
-   ÃÄitrRDA  0/26  Ram=0
+   ÃÄMAIN  0/194  Ram=0
+   ³  ÃÄ@cinit1  (Inline)  Ram=0
+   ³  ÃÄ@PSTRINGC_9600_31766_31767  0/34  Ram=2
+   ³  ÃÄ@PSTRINGC_9600_31766_31767  0/34  Ram=2
+   ³  ÀÄ@PUTCHARI_BIU_1  0/10  Ram=0
+   ÃÄitrRDA  0/106  Ram=2
    ÀÄtimer_0  0/16  Ram=0
