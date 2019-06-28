@@ -4,7 +4,7 @@
 
 #fuses HS, NOFCMEN, NOIESO, PUT, NOBROWNOUT, NOWDT
 #fuses NOPBADEN, NOMCLR, STVREN, NOLVP, NODEBUG, XT
-#use delay(clock=4000000)
+#use delay(clock=16000000)
 
 #use fast_io(a)
 #use fast_io(b)
@@ -83,7 +83,7 @@ void itrRDA(void)
    {
       banderaEnter=1;
    }
-   if (indexBff > 15)
+   if (indexBff == 15)
    {
       indexBff = 0;
    }
@@ -101,7 +101,7 @@ void itrRDA(void)
 #int_timer0
 void timer_0()
 {
-   set_timer0(56);
+   set_timer0(15536);
    contador++;
 }
 
@@ -112,8 +112,8 @@ void main(void)
    set_tris_c(0x80);
    set_tris_d(0x00);
    
-   setup_timer_0(rtcc_internal | rtcc_div_32);
-   set_timer0(56);
+   setup_timer_0(rtcc_internal | rtcc_div_8);
+   set_timer0(15536);
     
    enable_interrupts(int_timer0);
    enable_interrupts(global);   

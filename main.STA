@@ -1,6 +1,6 @@
 
-ROM used:   3102/65536 (5%)
-            3102/65536 (5%) including unused fragments
+ROM used:   3094/65536 (5%)
+            3094/65536 (5%) including unused fragments
 
             1.0 Average locations per line
             6.1 Average locations per statement
@@ -31,9 +31,9 @@ Page ROM  %  RAM   Vol Diff  Functions:
 0    348   6   14             @DIVFF
 0    562   9   19  1542 12.4  strtof
 0      8   0    0             @PUTCHARI_BIU_1
-0    108   2    2   442  4.7  itrRDA
-0     16   0    0    29  1.2  timer_0
-0    810  13    3  4243 10.0  MAIN
+0    108   2    2   444  5.2  itrRDA
+0     14   0    0    29  1.2  timer_0
+0    804  13    3  4243 10.0  MAIN
 0     56   1    0             @const953
 0     34   1    2             @PSTRINGC_9600_31766_31767
 0      4   0    0             @const955
@@ -45,10 +45,10 @@ Program metrics:
     Functions               4
     Statements              506
     Comments                695
-    Volume (V)              7419
-    Difficulty (D)          28.0
-    Effort to implement (E) 207439
-    Time to implement (T)   3 hours, 12 minutes
+    Volume (V)              7422
+    Difficulty (D)          28.4
+    Effort to implement (E) 211098
+    Time to implement (T)   3 hours, 15 minutes
     Est Delivered Bugs (B)  1
     Cyclomatic Complexity   49
     Maintainability (MI)    101
@@ -58,7 +58,7 @@ Program metrics:
 00000-00002     4  0  
 00004-00006     0  4  
 00008-000A0   154  0  
-000A2-0FFFE  2944  62430  
+000A2-0FFFE  2936  62438  
 
 
 
