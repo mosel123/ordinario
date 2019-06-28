@@ -1,7 +1,7 @@
-D G "__PCH__" 0 184 ""5.012""
-D G "__DEVICE__" 0 184 "4620"
-D G "__DATE__" 0 184 ""28-jun.-19""
-D G "__TIME__" 0 184 ""13:34:08"" "Standard Header file for the PIC18F4620 device ////////////////"
+D G "__PCH__" 0 244 ""5.012""
+D G "__DEVICE__" 0 244 "4620"
+D G "__DATE__" 0 244 ""28-jun.-19""
+D G "__TIME__" 0 244 ""13:55:29"" "Standard Header file for the PIC18F4620 device ////////////////"
 c L "set_tris_a" 1 3 6 "FUNCTION"
 v L "value" 1 43 "int8" `54 
 f B "set_tris_a" 1 43 "void(int8 value)" `53 
@@ -1337,19 +1337,27 @@ V G "buffOp1" 0 41 "int8[3]" `923
 V G "buffOp2" 0 42 "int8[3]" `924 
 V G "buffOp3" 0 43 "int8[3]" `925 
 V G "indexBff" 0 45 "int8" `926 
-V G "sumaDatos" 0 46 "int8" `927 
-V G "banderaOp1" 0 48 "int1" `928 
-V G "banderaOp2" 0 49 "int1" `929 
-V G "banderaOp3" 0 50 "int1" `930 
-V G "contador" 0 52 "int8" `931 
-V G "contadorPuntoComa" 0 53 "int8" `932 
-V G "contadorLsb" 0 54 "int8" `933 
-F G "itrRDA" 0 65 "void()" `940 
-F G "timer_0" 0 93 "void()" `941 
-F G "MAIN" 0 99 "void()" `942 
-V L "index" 0 129 "int8" `948 
-V L "index" 0 138 "int8" `949 
-V L "index" 0 148 "int8" `950 
+V G "sumaOp1" 0 46 "int8" `927 
+V G "sumaOp2" 0 47 "int8" `928 
+V G "sumaOp3" 0 48 "int8" `929 
+V G "banderaOp1" 0 50 "int1" `930 
+V G "banderaOp2" 0 51 "int1" `931 
+V G "banderaOp3" 0 52 "int1" `932 
+V G "banderaPuertoA" 0 54 "int1" `933 
+V G "banderaPuertoB" 0 55 "int1" `934 
+V G "banderaPuertoD" 0 56 "int1" `935 
+V G "contador" 0 58 "int8" `936 
+V G "contadorPuntoComa" 0 59 "int8" `937 
+V G "contadorLsb" 0 60 "int8" `938 
+V G "contadorA" 0 62 "int8" `939 
+V G "contadorB" 0 63 "int8" `940 
+V G "contadorD" 0 64 "int8" `941 
+F G "itrRDA" 0 75 "void()" `948 
+F G "timer_0" 0 103 "void()" `949 
+F G "MAIN" 0 109 "void()" `950 
+V L "index" 0 139 "int8" `956 
+V L "index" 0 148 "int8" `957 
+V L "index" 0 158 "int8" `958 
 F B "reset_cpu" 0 0
 F B "abs" 1 0
 F B "sleep" 0 1

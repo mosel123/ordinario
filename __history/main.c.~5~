@@ -43,25 +43,15 @@ char buffOp2[3]={};
 char buffOp3[3]={};
 
 int indexBff=0;
-int sumaOp1=0;
-int sumaOp2=0;
-int sumaOp3=0;
+int sumaDatos=0;
 
 int1 banderaOp1=0;
 int1 banderaOp2=0;
 int1 banderaOp3=0;
 
-int1 banderaPuertoA=0;
-int1 banderaPuertoB=0;
-int1 banderaPuertoD=0;
-
 int contador=0;
 int contadorPuntoComa=0;
 int contadorLsb = 0;
-
-int contadorA=1;
-int contadorB=1;
-int contadorD=1;
 
 #bit banderaSerial = bandera.0
 #bit banderaEcho = echo.0
@@ -168,74 +158,20 @@ void main(void)
          if(banderaOp1)
          {
             banderaOp1=0;
-            sumaOp1=0;
-            sumaOp1=atof(buffOp1);
+            sumaDatos=0;
+            sumaDatos=atof(buffOp1);
          }
          else if(banderaOp2)
          {
             banderaOp2=0;
-            sumaOp2=0;
-            sumaOp2=atof(buffOp2);
+            sumaDatos=0;
+            sumaDatos=atof(buffOp2);
          }
          else if(banderaOp3)
          {
             banderaOp3=0;
-            sumaOp3=0;
-            sumaOp3=atof(buffOp3);
-         }
-      }
-      
-      if(banderaSerial)
-      {
-         banderaSerial=0;
-         if(banderacadena)
-         {
-            banderaCadena=0;
-            if(banderaEnter)
-            {
-               banderaEnter=0;
-               if((sumaOp1&0x0C) > 0x00)
-               {
-                  banderaPuertoA=1;
-               }
-               else if((sumaOp1&0x0C) != 0x0C)
-               {
-                  banderaPuertoA=0;
-               }
-               
-               if((sumaOp1&0x11) > 0x00)
-               {
-                  banderaPuertoB=1;
-               }
-               else if((sumaOp1&0x11) != 0x11)
-               {
-                  banderaPuertoB=0;
-               }
-               
-               if((sumaOp1&0x42) > 0x00)
-               {
-                  banderaPuertoD=1;
-               }
-               else if((sumaOp1&0x42) != 0x42)
-               {
-                  banderaPuertoD=0;
-               }
-            }
-         }
-         
-         if(banderaPuertoA)
-         {
-            contadorA = contadorA << 1;
-            if(contadorA == 128)
-            {
-               contadorA = 1;
-            }
-         }
-         
-         else
-         {
-            printf("Error reingresa correctamente los datos...");
-            printf("\n \r");
+            sumaDatos=0;
+            sumaDatos=atof(buffOp3);
          }
       }
    }
