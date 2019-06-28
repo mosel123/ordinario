@@ -1,7 +1,8 @@
-D G "__PCH__" 0 244 ""5.012""
-D G "__DEVICE__" 0 244 "4620"
-D G "__DATE__" 0 244 ""28-jun.-19""
-D G "__TIME__" 0 244 ""13:55:29"" "Standard Header file for the PIC18F4620 device ////////////////"
+D G "posCaracter" 0 30 "14"
+D G "__PCH__" 0 278 ""5.012""
+D G "__DEVICE__" 0 278 "4620"
+D G "__DATE__" 0 278 ""28-jun.-19""
+D G "__TIME__" 0 278 ""14:42:09"" "Standard Header file for the PIC18F4620 device ////////////////"
 c L "set_tris_a" 1 3 6 "FUNCTION"
 v L "value" 1 43 "int8" `54 
 f B "set_tris_a" 1 43 "void(int8 value)" `53 
@@ -1346,9 +1347,9 @@ V G "banderaOp3" 0 52 "int1" `932
 V G "banderaPuertoA" 0 54 "int1" `933 
 V G "banderaPuertoB" 0 55 "int1" `934 
 V G "banderaPuertoD" 0 56 "int1" `935 
-V G "contador" 0 58 "int8" `936 
-V G "contadorPuntoComa" 0 59 "int8" `937 
-V G "contadorLsb" 0 60 "int8" `938 
+V G "banderaImprime" 0 57 "int1" `936 
+V G "contador" 0 59 "int8" `937 
+V G "contadorPuntoComa" 0 60 "int8" `938 
 V G "contadorA" 0 62 "int8" `939 
 V G "contadorB" 0 63 "int8" `940 
 V G "contadorD" 0 64 "int8" `941 

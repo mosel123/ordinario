@@ -1,9 +1,9 @@
 ÀÄmain
-   ÃÄMAIN  0/694  Ram=3
+   ÃÄMAIN  0/794  Ram=3
    ³  ÃÄ@cinit1  (Inline)  Ram=0
    ³  ÃÄ@PSTRINGC_9600_31766_31767  0/34  Ram=2
    ³  ÃÄ@PSTRINGC_9600_31766_31767  0/34  Ram=2
-   ³  ÃÄ@PUTCHARI_BIU_1  0/10  Ram=0
+   ³  ÃÄ@PUTCHARI_BIU_1  0/8  Ram=0
    ³  ÃÄstrtof  0/562  Ram=19
    ³  ³  ÃÄ@MULFF  0/242  Ram=11
    ³  ³  ÃÄ@ITOF  0/54  Ram=2
@@ -21,6 +21,6 @@
    ³  ³  ÀÄ*
    ³  ÃÄ@SFTOI  0/56  Ram=4
    ³  ÃÄ@PSTRINGC_9600_31766_31767  0/34  Ram=2
-   ³  ÀÄ@PSTRINGC_9600_31766_31767  0/34  Ram=2
+   ³  ÀÄ@PUTCHARI_BIU_1  0/8  Ram=0
    ÃÄitrRDA  0/108  Ram=2
    ÀÄtimer_0  0/16  Ram=0
