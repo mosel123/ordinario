@@ -1,0 +1,7 @@
+>>> Warning 202 "main.c" Line 28(6,17): Variable never used:   contadorLsb
+>>> Warning 202 "main.c" Line 29(6,17): Variable never used:   contadorMsb
+>>> Warning 202 "main.c" Line 31(6,14): Variable never used:   banderaI
+>>> Warning 202 "main.c" Line 32(6,14): Variable never used:   banderaD
+      Memory usage:   ROM=0%      RAM=1% - 1%
+      0 Errors,  4 Warnings.
+Build Successful.

@@ -1,0 +1,75 @@
+#include <18f4620.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+#fuses HS, NOFCMEN, NOIESO, PUT, NOBROWNOUT, NOWDT
+#fuses NOPBADEN, NOMCLR, STVREN, NOLVP, NODEBUG, XT
+#use delay(clock=16000000)
+
+#use fast_io(a)
+#use fast_io(b)
+#use fast_io(c)
+#use fast_io(d)
+
+#define debugSerial
+
+#ifdef debugSerial
+   #define TX_232        PIN_C6
+   #define RX_232        PIN_C7
+   #use RS232(BAUD=9600, XMIT=TX_232, BITS=8,PARITY=N, STOP=1,UART1,RCV=RX_232)
+#endif 
+
+char caracter;
+char bandera;
+char echo;
+char enter;
+
+int contador=0;
+long contadorLsb = 0;
+long contadorMsb = 128;
+
+int1 banderaI = 0;
+int1 banderaD = 0;
+
+#bit banderaSerial = bandera.0
+#bit banderaEcho = echo.0
+#bit banderaEnter = enter.0
+
+#INT_RDA
+void itrRDA(void)
+{
+   caracter = getc();
+   banderaEcho = 1;
+   banderaSerial = 1;
+   if(caracter==0x0D)
+   {
+      banderaEnter=1;
+   }
+}
+
+#int_timer0
+void timer_0()
+{
+   set_timer0(15536);
+   contador++;
+}
+
+void main(void)
+{
+   set_tris_a(0x00);
+   set_tris_b(0x00);
+   set_tris_c(0x80);
+   set_tris_d(0x00);
+   
+   setup_timer_0(rtcc_internal | rtcc_div_8);
+   set_timer0(15536);
+    
+   enable_interrupts(int_timer0);
+   enable_interrupts(global);   
+   enable_interrupts(INT_RDA);
+   
+   while(TRUE)
+   {
+      
+   }
+}
